@@ -1,0 +1,24 @@
+      .cards-grid {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+      }
+
+      .cards-grid-row {
+        display: flex;
+        column-gap: 10px;
+      }
+
+      .card-button {
+        height: 100px;
+        width: 70px;
+        display: flex;
+        align-items: center;
+      }
+
+      .card-image {
+        height: 70px;
+        width: 60px;
+        background: none;
+      }
+    

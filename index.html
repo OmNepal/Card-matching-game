@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Matching Game</title>
+
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <p>Card Matching Game</p>
+    <p>Game Rules:
+      <ul>
+        <li>First, look at all the card by clicking them</li>
+        <li>You only get to see the cards once</li>
+        <li>Then, press play game to start the game</li>
+        <li>Find all the correct pairs of cards to win the game</li>
+      </ul>
+    </p>
+    <div class="cards-grid">
+      <div class="cards-grid-row">
+        <button
+          class="card-button js-card-button js-card-button-after-play js-card-button-after-play-11 js-card-button-11"
+          data-id="11"
+        ></button>
+        <button
+          class="card-button js-card-button js-card-button-after-play js-card-button-after-play-12 js-card-button-12"
+          data-id="12"
+        ></button>
+        <button
+          class="card-button js-card-button js-card-button-after-play js-card-button-after-play-13 js-card-button-13"
+          data-id="13"
+        ></button>
+      </div>
+      <div class="cards-grid-row">
+        <button
+          class="card-button js-card-button js-card-button-after-play js-card-button-after-play-21 js-card-button-21"
+          data-id="21"
+        ></button>
+        <button
+          class="card-button js-card-button js-card-button-after-play js-card-button-after-play-22 js-card-button-22"
+          data-id="22"
+        ></button>
+        <button
+          class="card-button js-card-button js-card-button-after-play js-card-button-after-play-23 js-card-button-23"
+          data-id="23"
+        ></button>
+      </div>
+      <div class="cards-grid-row">
+        <button
+          class="card-button js-card-button js-card-button-after-play js-card-button-after-play-31 js-card-button-31"
+          data-id="31"
+        ></button>
+        <button
+          class="card-button js-card-button js-card-button-after-play js-card-button-after-play-32 js-card-button-32"
+          data-id="32"
+        ></button>
+        <button
+          class="card-button js-card-button js-card-button-after-play js-card-button-after-play-33 js-card-button-33"
+          data-id="33"
+        ></button>
+      </div>
+    </div>
+
+    <p class="js-display-play-message">
+      When you are ready to play, Press the Button
+    </p>
+    <button class="js-play-game-button">Play game</button>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
