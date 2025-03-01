@@ -32,9 +32,10 @@
         });
       });
 
+      let imageCardObjectLength = 0;
       function checkImageCardObject(cardId, cardButtonWithId) {
-            let imageCardObjectLength = Object.keys(imageToCardObject).length;
-          
+        imageCardObjectLength = Object.keys(imageToCardObject).length;
+
             if (imageCardObjectLength === 9) {
               displayMessageElement.innerHTML =
                 "You have seen all the cards. Now press play to play the game.";
@@ -105,6 +106,10 @@
       let matchingCardsArray = [];
 
       playGameElement.addEventListener("click", () => {
+
+        if (imageCardObjectLength < 8) {
+          displayMessageElement.innerHTML = 'You must view all the cards before playing!'
+        } else {
         displayMessageElement.innerHTML = "Start with any card you want";
          
         const cardButtonsAfterPlay = document.querySelectorAll(".js-card-button");
@@ -157,7 +162,7 @@
                     match++;
                     if (match === 4) {
                       displayMessageElement.innerHTML = " Congratulations, You WON!!!";
-                      gameEnded()
+                      gameEnded(cardButtonsAfterPlay)
                       
                       return;
                     }
@@ -180,12 +185,13 @@
             
           });
         });
-
-        function gameEnded() {
-          cardButtonsAfterPlay.forEach((cardButton) => {
-          cardButton.addEventListener("click", () => {
-            displayMessageElement.innerHTML = 'Game is already over! Press Restart to start the game again.'
-          })
-        })
-        }
+      }
       });
+
+      function gameEnded(cardButtonsAfterPlay) {
+        cardButtonsAfterPlay.forEach((cardButton) => {
+        cardButton.addEventListener("click", () => {
+          displayMessageElement.innerHTML = 'Game is already over! Press Restart to start the game again.'
+        })
+      })
+      }
