@@ -35,8 +35,10 @@
       let imageCardObjectLength = 0;
       function checkImageCardObject(cardId, cardButtonWithId) {
         imageCardObjectLength = Object.keys(imageToCardObject).length;
+        console.log(imageCardObjectLength)
 
-            if (imageCardObjectLength === 9) {
+            if (imageCardObjectLength === 8) {
+              displayImageOnClick(cardId, cardButtonWithId);
               displayMessageElement.innerHTML =
                 "You have seen all the cards. Now press play to play the game.";
             } else {
@@ -142,7 +144,6 @@
               displayMessageElement.innerHTML = ('Choose the pair for this card')
               } 
               else {
-
                 checkButtonOneOrTwo++;
                 
                 cardButtonWithId.innerHTML = `<img src='images/${imageToCardObject[cardId]}.png' alt='' class = 'card-image'/>`;
@@ -169,13 +170,16 @@
                     checkButtonOneOrTwo = 0;
                   } else {
                     displayMessageElement.innerHTML = "Incorrect Match. Go again.";
-                    setTimeout(() => {
+                    if (match !== 4) {
+                       setTimeout(() => {
                       cardButtonWithId.innerHTML = ``;
                       document.querySelector(
                         `.js-card-button-after-play-${checkCardId}`
                       ).innerHTML = "";
                     }, 1500);
                     checkButtonOneOrTwo = 0;
+                    }
+                   
                   }
                 }
               }
@@ -191,7 +195,8 @@
       function gameEnded(cardButtonsAfterPlay) {
         cardButtonsAfterPlay.forEach((cardButton) => {
         cardButton.addEventListener("click", () => {
-          displayMessageElement.innerHTML = 'Game is already over! Press Restart to start the game again.'
+          displayMessageElement.innerHTML = 'Game is already over! Press Restart to start the game again.' 
+          return ;
         })
       })
       }
